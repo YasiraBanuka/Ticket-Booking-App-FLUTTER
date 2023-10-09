@@ -5,6 +5,7 @@ import 'package:ticketing_app/screens/hotel_screen.dart';
 import 'package:ticketing_app/screens/ticket_view.dart';
 import 'package:ticketing_app/utils/app_info_list.dart';
 import 'package:ticketing_app/utils/app_styles.dart';
+import 'package:ticketing_app/widgets/double_text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -76,26 +77,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: Styles.headlineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("you tapped me");
-                      },
-                      child: Text(
-                        "View all",
-                        style: Styles.textStyle.copyWith(
-                          color: Styles.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
+                const AppDoubleTextWidget(
+                    bigText: "Upcoming Flights", smallText: "View all"),
               ],
             ),
           ),
@@ -112,22 +95,9 @@ class HomeScreen extends StatelessWidget {
           Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels", style: Styles.headlineStyle2),
-                InkWell(
-                  onTap: () {
-                    print("You're tapped");
-                  },
-                  child: Text(
-                    "View all",
-                    style: Styles.textStyle.copyWith(
-                      color: Styles.primaryColor,
-                    ),
-                  ),
-                ),
-              ],
+            child: const AppDoubleTextWidget(
+              bigText: "Hotels",
+              smallText: "View all",
             ),
           ),
           const Gap(15),
